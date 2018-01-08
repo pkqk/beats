@@ -2,26 +2,36 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Beat It</title>
+    <title>.beats by @pkqk</title>
     <style>
         body {
-            background: red;
+            background: #e2001a;
+            margin: 0;
+            padding: 0;
+        }
+        #bmt {
             color: white;
             font-family: "Helvetica";
-            text-shadow: 5px 5px 5px black;
+            text-shadow: 3px 3px 3px black;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
         }
         h1 {
-            text-align: center;
-            font-size: 20vw;
+            font-size: 18vw;
         }
         em {
             font-style: normal;
         }
-
     </style>
 </head>
 <body>
-    <h1><em>@</em><time id="beats">0</time></h1>
+    <main id="bmt">
+        <h1><em>@</em><time id="beats">0</time></h1>
+    </main>
     <script>
         var beats = document.getElementById("beats");
         var beater = window.setInterval(function() {
