@@ -28,12 +28,32 @@
         em {
             font-style: normal;
         }
+        footer {
+          color: white;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          padding: 1em;
+          font-family: "Helvetica";
+        }
+        footer a {
+          color: white;
+          text-decoration: none;
+        }
+        footer a:hover {
+          border-bottom: 1px solid white;
+        }
     </style>
 </head>
 <body>
     <main id="bmt">
         <h1><em>@</em><time id="beats">0</time></h1>
     </main>
+    <footer>
+        <a href="https://en.wikipedia.org/wiki/Swatch_Internet_Time">beats</a>
+        by
+        <a href="http://pkqk.net">@pkqk</a>
+    </footer>
     <script>
         var beats = document.getElementById("beats");
         var beater = function() {
