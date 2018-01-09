@@ -34,14 +34,17 @@
     </main>
     <script>
         var beats = document.getElementById("beats");
-        var beater = window.setInterval(function() {
-            var time = new Date();
-            var bmtHour = ((time.getUTCHours() + 1) % 24) * 3600;
-            var bmtMin = time.getUTCMinutes() * 60;
-            var bmtSec = time.getUTCSeconds();
-            var beat  = (bmtSec + bmtMin + bmtHour) / 86.4;
-            beats.innerHTML = beat.toFixed(3);
-        }, 100);
+        var beater = function() {
+          var time = new Date();
+          var bmtHour = ((time.getUTCHours() + 1) % 24) * 3600;
+          var bmtMin = time.getUTCMinutes() * 60;
+          var bmtSec = time.getUTCSeconds();
+          var bmtUSec = time.getUTCMilliseconds() / 1000.0;
+          var beat  = (bmtSec + bmtMin + bmtHour + bmtUSec) / 86.4;
+          beats.innerHTML = beat.toFixed(3);
+          window.requestAnimationFrame(beater);
+        };
+        window.requestAnimationFrame(beater);
     </script>
 </body>
 </html>
