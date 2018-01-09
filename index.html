@@ -63,7 +63,7 @@
           var bmtSec = time.getUTCSeconds();
           var bmtUSec = time.getUTCMilliseconds() / 1000.0;
           var beat  = (bmtSec + bmtMin + bmtHour + bmtUSec) / 86.4;
-          beats.innerHTML = beat.toFixed(3);
+          beats.innerHTML = ("000" + beat.toFixed(3)).slice(-7);
           window.requestAnimationFrame(beater);
         };
         window.requestAnimationFrame(beater);
